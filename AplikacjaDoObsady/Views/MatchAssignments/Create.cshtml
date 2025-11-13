@@ -13,23 +13,23 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="MatchId" class="control-label"></label>
+                <label asp-for="MatchId" class="control-label">Mecz</label>
                 <select asp-for="MatchId" class ="form-control" asp-items="ViewBag.MatchId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="MainRefereeId" class="control-label"></label>
+                <label asp-for="MainRefereeId" class="control-label">Sędzia</label>
                 <select asp-for="MainRefereeId" class ="form-control" asp-items="ViewBag.MainRefereeId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="AssistantReferee1Id" class="control-label"></label>
+                <label asp-for="AssistantReferee1Id" class="control-label">Asystent I</label>
                 <select asp-for="AssistantReferee1Id" class ="form-control" asp-items="ViewBag.AssistantReferee1Id"></select>
             </div>
             <div class="form-group">
-                <label asp-for="AssistantReferee2Id" class="control-label"></label>
+                <label asp-for="AssistantReferee2Id" class="control-label">Asystent II</label>
                 <select asp-for="AssistantReferee2Id" class ="form-control" asp-items="ViewBag.AssistantReferee2Id"></select>
             </div>
             <div class="form-group">
-                <label asp-for="FourthOfficialId" class="control-label"></label>
+                <label asp-for="FourthOfficialId" class="control-label">Techniczny</label>
                 <select asp-for="FourthOfficialId" class ="form-control" asp-items="ViewBag.FourthOfficialId"></select>
             </div>
             <div class="form-group">

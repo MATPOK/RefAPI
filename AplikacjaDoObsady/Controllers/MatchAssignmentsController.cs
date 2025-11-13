@@ -52,11 +52,11 @@ namespace AplikacjaDoObsady.Controllers
         // GET: MatchAssignments/Create
         public IActionResult Create()
         {
-            ViewData["AssistantReferee1Id"] = new SelectList(_context.Referee, "RefereeId", "RefereeId");
-            ViewData["AssistantReferee2Id"] = new SelectList(_context.Referee, "RefereeId", "RefereeId");
-            ViewData["FourthOfficialId"] = new SelectList(_context.Referee, "RefereeId", "RefereeId");
-            ViewData["MainRefereeId"] = new SelectList(_context.Referee, "RefereeId", "RefereeId");
-            ViewData["MatchId"] = new SelectList(_context.Matches, "MatchId", "MatchId");
+            ViewData["AssistantReferee1Id"] = new SelectList(_context.Referee, "RefereeId", "FullName");
+            ViewData["AssistantReferee2Id"] = new SelectList(_context.Referee, "RefereeId", "FullName");
+            ViewData["FourthOfficialId"] = new SelectList(_context.Referee, "RefereeId", "FullName");
+            ViewData["MainRefereeId"] = new SelectList(_context.Referee, "RefereeId", "FullName");
+            ViewData["MatchId"] = new SelectList(_context.Matches, "MatchId", "MatchTitle");
             return View();
         }
 
@@ -94,11 +94,11 @@ namespace AplikacjaDoObsady.Controllers
             {
                 return NotFound();
             }
-            ViewData["AssistantReferee1Id"] = new SelectList(_context.Referee, "RefereeId", "RefereeId", matchAssignment.AssistantReferee1Id);
-            ViewData["AssistantReferee2Id"] = new SelectList(_context.Referee, "RefereeId", "RefereeId", matchAssignment.AssistantReferee2Id);
-            ViewData["FourthOfficialId"] = new SelectList(_context.Referee, "RefereeId", "RefereeId", matchAssignment.FourthOfficialId);
-            ViewData["MainRefereeId"] = new SelectList(_context.Referee, "RefereeId", "RefereeId", matchAssignment.MainRefereeId);
-            ViewData["MatchId"] = new SelectList(_context.Matches, "MatchId", "MatchId", matchAssignment.MatchId);
+            ViewData["AssistantReferee1Id"] = new SelectList(_context.Referee, "RefereeId", "FullName", matchAssignment.AssistantReferee1Id);
+            ViewData["AssistantReferee2Id"] = new SelectList(_context.Referee, "RefereeId", "FullName", matchAssignment.AssistantReferee2Id);
+            ViewData["FourthOfficialId"] = new SelectList(_context.Referee, "RefereeId", "FullName", matchAssignment.FourthOfficialId);
+            ViewData["MainRefereeId"] = new SelectList(_context.Referee, "RefereeId", "FullName", matchAssignment.MainRefereeId);
+            ViewData["MatchId"] = new SelectList(_context.Matches, "MatchId", "MatchTitle", matchAssignment.MatchId);
             return View(matchAssignment);
         }
 

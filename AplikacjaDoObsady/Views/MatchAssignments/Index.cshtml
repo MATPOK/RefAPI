@@ -37,19 +37,19 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Match.MatchId)
+                @Html.DisplayFor(modelItem => item.Match.MatchTitle)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MainReferee.RefereeId)
+                @Html.DisplayFor(modelItem => item.MainReferee.FullName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AssistantReferee1.RefereeId)
+                    @Html.DisplayFor(modelItem => item.AssistantReferee1.FullName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AssistantReferee2.RefereeId)
+                    @Html.DisplayFor(modelItem => item.AssistantReferee2.FullName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FourthOfficial.RefereeId)
+                    @Html.DisplayFor(modelItem => item.FourthOfficial.FullName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
