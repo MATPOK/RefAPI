@@ -1,0 +1,65 @@
+﻿@model IEnumerable<AplikacjaDoObsady.Models.MatchAssignment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Match)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MainReferee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssistantReferee1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssistantReferee2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FourthOfficial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Match.MatchId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MainReferee.RefereeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssistantReferee1.RefereeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssistantReferee2.RefereeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FourthOfficial.RefereeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MatchAssignmentId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MatchAssignmentId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MatchAssignmentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

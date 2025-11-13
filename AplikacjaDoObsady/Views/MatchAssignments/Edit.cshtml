@@ -1,0 +1,59 @@
+﻿@model AplikacjaDoObsady.Models.MatchAssignment
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>MatchAssignment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MatchAssignmentId" />
+            <div class="form-group">
+                <label asp-for="MatchId" class="control-label"></label>
+                <select asp-for="MatchId" class="form-control" asp-items="ViewBag.MatchId"></select>
+                <span asp-validation-for="MatchId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MainRefereeId" class="control-label"></label>
+                <select asp-for="MainRefereeId" class="form-control" asp-items="ViewBag.MainRefereeId"></select>
+                <span asp-validation-for="MainRefereeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssistantReferee1Id" class="control-label"></label>
+                <select asp-for="AssistantReferee1Id" class="form-control" asp-items="ViewBag.AssistantReferee1Id"></select>
+                <span asp-validation-for="AssistantReferee1Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssistantReferee2Id" class="control-label"></label>
+                <select asp-for="AssistantReferee2Id" class="form-control" asp-items="ViewBag.AssistantReferee2Id"></select>
+                <span asp-validation-for="AssistantReferee2Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FourthOfficialId" class="control-label"></label>
+                <select asp-for="FourthOfficialId" class="form-control" asp-items="ViewBag.FourthOfficialId"></select>
+                <span asp-validation-for="FourthOfficialId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" class="form-control"></select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
